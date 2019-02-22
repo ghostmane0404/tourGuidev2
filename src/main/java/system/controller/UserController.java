@@ -29,11 +29,9 @@ public class UserController {
     }*/
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public @ResponseBody
-    String getAllUsers() {
+    public @ResponseBody String getAllUsers() {
         ApplicationContext context =
-                new ClassPathXmlApplicationContext(
-                        "db-conf.xml");
+                new ClassPathXmlApplicationContext("db-conf.xml");
 
         UserDaoImp jdbcTemplateDeveloperDao =
                 (UserDaoImp) context.getBean("jdbcTemplateDeveloperDao");
