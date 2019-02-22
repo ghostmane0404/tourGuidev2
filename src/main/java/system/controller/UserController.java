@@ -37,4 +37,25 @@ public class UserController {
                 (UserDaoImp) context.getBean("jdbcTemplateDeveloperDao");
         return jdbcTemplateDeveloperDao.getUserById(1).toString();
     }
+
+    @RequestMapping(value = "search_by_id", method = RequestMethod.GET)
+    public ModelAndView validateUser() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("userFromServer", new User());
+        modelAndView.setViewName("user_search_page");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/check", method = RequestMethod.POST)
+    public @ResponseBody
+    String checkUser(@ModelAttribute("userFromServer") User user) {
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("db-conf.xml");
+
+        UserDaoImp jdbcTemplateDeveloperDao =
+                (UserDaoImp) context.getBean("jdbcTemplateDeveloperDao");
+        return jdbcTemplateDeveloperDao.getUserById(user.getId()).toString();
+    }
+
+
 }
