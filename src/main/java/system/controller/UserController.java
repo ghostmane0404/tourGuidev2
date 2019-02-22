@@ -38,7 +38,7 @@ public class UserController {
         return jdbcTemplateDeveloperDao.getUserById(1).toString();
     }
 
-    @RequestMapping(value = "search_by_id", method = RequestMethod.GET)
+    @RequestMapping(value = "/search_by_id", method = RequestMethod.GET)
     public ModelAndView validateUser() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("userFromServer", new User());
