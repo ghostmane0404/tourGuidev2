@@ -17,9 +17,9 @@ public class GuideDaoImpl implements GuideDao {
 
     @Override
     public void createTour(Tour tour) {
-        String SQL = "INSERT INTO `TOURS`(`ID`, `DIRECTION`, `CUSTOMER`, `KODFORGUIDE`, `PRICEOFTUOR`, `DAYOFTOUR`, `PEOPLECOUNT`, `TRANSPORTPRICE`, `TICKETSPRICE`, `OTHERPRICE`) " +
+        String SQL = "INSERT INTO `TOURS`(`DIRECTION`, `CUSTOMER`, `KODFORGUIDE`, `PRICEOFTUOR`, `DAYOFTOUR`, `PEOPLECOUNT`, `TRANSPORTPRICE`, `TICKETSPRICE`, `OTHERPRICE`) " +
                 "VALUES " +
-                "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         jdbcTemplate.update(SQL, tour.getDirection(), tour.getCustomer(), tour.getKodForGuide(), tour.getPriceOfTour(),
                 tour.getDayOfTour(), tour.getPeopleCount(), tour.getTransportPrice(), tour.getTicketPrice(), tour.getOtherPrice());

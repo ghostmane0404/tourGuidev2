@@ -29,6 +29,6 @@ public class GuideController {
                 (GuideDaoImpl) context.getBean("jdbcTemplateGuideDao");
         db.createTour(tour);
 
-        return "Получилось?";
+        return "OK?";
     }
 }
