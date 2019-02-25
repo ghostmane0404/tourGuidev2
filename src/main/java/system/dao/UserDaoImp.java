@@ -26,6 +26,20 @@ public class UserDaoImp implements UserDao {
         return (User) jdbcTemplate.queryForObject(SQL, new Object[]{id}, new UserMapper());
     }
 
+    @Override
+    public User getUserByLogin(String name) {
+        String SQL = "SELECT * FROM USERS WHERE LOGIN = ?";
+        return (User) jdbcTemplate.queryForObject(SQL, new Object[]{name}, new UserMapper());
+
+    }
+
+    @Override
+    public User getUserByPassword(String password) {
+        String SQL = "SELECT * FROM USERS WHERE PASSWORD = ?";
+        return (User) jdbcTemplate.queryForObject(SQL, new Object[]{password}, new UserMapper());
+
+    }
+
     public List<User> listUsers() {
         String SQL = "SELECT * FROM USERS";
         return jdbcTemplate.query(SQL, new UserMapper());

@@ -11,6 +11,10 @@ public interface UserDao {
 
     User getUserById(Integer id);
 
+    User getUserByLogin(String name);
+
+    User getUserByPassword(String password);
+
     List<User> listUsers();
 
     void createUser(String name, String surname, String phone,
