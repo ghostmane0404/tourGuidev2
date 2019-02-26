@@ -8,5 +8,5 @@ public interface AdminDao extends GuideDao {
 
     void createGuide(User user);
 
-    void deleteGuide();
+    void deleteGuide(String login);
 }

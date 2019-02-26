@@ -1,14 +1,15 @@
-package system.dao;
+package system.dao.impl;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import system.dao.GuideDao;
 import system.model.Tour;
 
 import javax.sql.DataSource;
 
 public class GuideDaoImpl implements GuideDao {
 
-    private DataSource dataSource;
-    private JdbcTemplate jdbcTemplate;
+    protected DataSource dataSource;
+    protected JdbcTemplate jdbcTemplate;
 
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;

@@ -16,11 +16,16 @@
 
     <!-- Here we're defining studentJDBCTemplate bean -->
     <bean id="jdbcTemplateDeveloperDao"
-          class="system.dao.UserDaoImp">
+          class="system.dao.impl.UserDaoImp">
         <property name="dataSource"  ref="dataSource" />
     </bean>
     <bean id="jdbcTemplateGuideDao"
-          class="system.dao.GuideDaoImpl">
+          class="system.dao.impl.GuideDaoImpl">
+        <property name="dataSource"  ref="dataSource" />
+    </bean>
+
+    <bean id="jdbcTemplateAdminDao"
+          class="system.dao.impl.AdminDaoImpl">
         <property name="dataSource"  ref="dataSource" />
     </bean>
 

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import system.dao.UserDaoImp;
+import system.dao.impl.UserDaoImp;
 import system.model.Tour;
 import system.model.User;
 
@@ -74,6 +74,9 @@ public class UserController {
                         return modelAndView;
                     case "admin":
                         modelAndView.setViewName("admin_page");
+                        modelAndView.addObject("guideFromForm", new User());
+                        modelAndView.addObject("tourFromAdmin", new Tour());
+                        modelAndView.addObject("removingGuide", new User());
                         return modelAndView;
                     case "boss":
                         modelAndView.setViewName("boss_page");

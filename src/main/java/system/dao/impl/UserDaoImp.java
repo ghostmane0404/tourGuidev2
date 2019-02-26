@@ -1,7 +1,8 @@
-package system.dao;
+package system.dao.impl;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import system.dao.UserDao;
 import system.model.User;
 import system.util.UserMapper;
 
