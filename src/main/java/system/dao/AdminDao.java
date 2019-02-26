@@ -1,4 +1,12 @@
 package system.dao;
 
-public class AdminDao {
+import system.model.User;
+
+import javax.sql.DataSource;
+
+public interface AdminDao extends GuideDao {
+
+    void createGuide(User user);
+
+    void deleteGuide();
 }

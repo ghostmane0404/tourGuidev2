@@ -61,11 +61,11 @@ public class UserController {
 
         UserDaoImp fromDb =
                 (UserDaoImp) context.getBean("jdbcTemplateDeveloperDao");
-        String nameFromForm = user.getName();
+        String loginFromForm = user.getLogin();
         String passwordFromForm = user.getPassword();
 
         try {
-            User userFromDb = fromDb.getUserByLogin(nameFromForm);
+            User userFromDb = fromDb.getUserByLogin(loginFromForm);
             if (passwordFromForm.equals(userFromDb.getPassword())) {
                 switch (userFromDb.getMast()) {
                     case "guide":

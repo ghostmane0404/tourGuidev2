@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import system.model.User;
 import system.util.UserMapper;
 
+import javax.jws.soap.SOAPBinding;
 import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.List;
@@ -45,10 +46,11 @@ public class UserDaoImp implements UserDao {
         return jdbcTemplate.query(SQL, new UserMapper());
     }
 
-    public void createUser(String name, String surname, String phone, String mast, String pass, boolean isWorking) {
-        String SQL = "INSERT INTO USERS(NAME, SURNAME, PHONE, MAST, PASS, ISWORKING) VALUES (?,?,?,?,?,?)";
+    public void createUser(User user) {
+        String SQL = "INSERT INTO USERS(NAME, LOGIN, SURNAME, PHONE, MAST, PASS, ISWORKING) VALUES (?,?,?,?,?,?)";
 
-        jdbcTemplate.update(SQL, name, surname, phone, mast, pass, isWorking);
+        jdbcTemplate.update(SQL, user.getName(), user.getLogin(), user.getSurname(),
+                user.getPhone(), user.getMast(), user.getPassword(), user.isWorking());
     }
 
     public void removeUser(Integer id) {

@@ -17,8 +17,7 @@ public interface UserDao {
 
     List<User> listUsers();
 
-    void createUser(String name, String surname, String phone,
-                    String mast, String pass, boolean isWorking);
+    void createUser(User user);
 
     void removeUser(Integer id);
 

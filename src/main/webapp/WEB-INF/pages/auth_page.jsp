@@ -15,7 +15,7 @@
 
 
 <spring:form modelAttribute="userFromClient" method="post" action="/user-system/users/valid">
-    <spring:input path="name"/>
+    <spring:input path="login"/>
     <spring:input path="password"/>
     <spring:button>Sign in</spring:button>
 </spring:form>

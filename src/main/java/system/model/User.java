@@ -8,8 +8,16 @@ public class User {
     private String phone;
     private String mast;
     private String password;
+    private String login;
     private boolean isWorking;
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
     public int getId() {
         return id;
