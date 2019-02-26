@@ -6,20 +6,15 @@ import system.dao.UserDao;
 import system.model.User;
 import system.util.UserMapper;
 
-import javax.jws.soap.SOAPBinding;
 import javax.sql.DataSource;
-import java.util.Arrays;
 import java.util.List;
 
 
 @Repository
 public class UserDaoImp implements UserDao {
-    private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
-
     public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 

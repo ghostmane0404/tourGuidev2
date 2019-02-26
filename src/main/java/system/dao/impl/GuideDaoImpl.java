@@ -8,17 +8,16 @@ import javax.sql.DataSource;
 
 public class GuideDaoImpl implements GuideDao {
 
-    protected DataSource dataSource;
-    protected JdbcTemplate jdbcTemplate;
+    JdbcTemplate jdbcTemplate;
 
     public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     @Override
     public void createTour(Tour tour) {
-        String SQL = "INSERT INTO `TOURS`(`DIRECTION`, `CUSTOMER`, `KODFORGUIDE`, `PRICEOFTUOR`, `DAYOFTOUR`, `PEOPLECOUNT`, `TRANSPORTPRICE`, `TICKETSPRICE`, `OTHERPRICE`) " +
+        String SQL = "INSERT INTO `TOURS`(`DIRECTION`, `CUSTOMER`, `KODFORGUIDE`, `PRICEOFTUOR`," +
+                " `DAYOFTOUR`, `PEOPLECOUNT`, `TRANSPORTPRICE`, `TICKETSPRICE`, `OTHERPRICE`) " +
                 "VALUES " +
                 "(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 

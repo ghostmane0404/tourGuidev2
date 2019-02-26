@@ -26,5 +26,8 @@
     <spring:button>Add tour</spring:button>
 </spring:form>
 
+
+<a href="/user-system/guide/view">Show your tours</a>
+
 </body>
 </html>
