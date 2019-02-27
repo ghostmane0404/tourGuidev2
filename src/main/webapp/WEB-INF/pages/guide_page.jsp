@@ -17,7 +17,6 @@
     <spring:input path="direction"/> Направление <br>
     <spring:input path="customer"/> Заказчик<br>
     <spring:input path="peopleCount"/> Количество людей <br>
-    <spring:input path="kodForGuide"/> Код гида (временно) <br>
     <spring:input path="priceOfTour"/> Цена поездки <br>
     <spring:input path="ticketPrice"/> Цена билета <br>
     <spring:input path="transportPrice"/> Цена транспорта <br>

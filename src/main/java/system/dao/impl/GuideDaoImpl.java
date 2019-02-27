@@ -10,6 +10,8 @@ public class GuideDaoImpl implements GuideDao {
 
     JdbcTemplate jdbcTemplate;
 
+
+
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }

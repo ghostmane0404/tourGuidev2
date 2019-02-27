@@ -1,4 +1,5 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="forms" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%--
   Created by IntelliJ IDEA.
   User: alexandr
@@ -10,15 +11,16 @@
 <html>
 <head>
     <title>Auth</title>
+    <spring:url value="/resources/style.css" var="styleCSS" />
+    <link href="${styleCSS}" rel="stylesheet" />
 </head>
 <body>
 
-
-<spring:form modelAttribute="userFromClient" method="post" action="/user-system/users/valid">
-    <spring:input path="login"/>
-    <spring:input path="password"/>
-    <spring:button>Sign in</spring:button>
-</spring:form>
+<forms:form modelAttribute="userFromClient"  method="post" action="/user-system/users/valid">
+    <forms:input cssClass="login" path="login" />
+    <forms:input path="password"/>
+    <forms:button>Sign in</forms:button>
+</forms:form>
 
 </body>
 </html>
